@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "catmkm"
+version = "0.1.0"
+description = "Microkinetic modelling toolkit: steady-state rates, DRC, thermodynamic corrections, reaction-path search and plotting."
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "MIT"}
+authors = [{name = "catmkm contributors"}]
+dependencies = [
+    "numpy",
+    "scipy",
+    "mpmath",
+]
+
+[project.optional-dependencies]
+plot = ["matplotlib"]
+dev = ["pytest"]
+
+[project.scripts]
+catmkm = "catmkm.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["catmkm*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

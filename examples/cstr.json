@@ -1,0 +1,26 @@
+{
+    "temperature": [500],
+    "ode_setting": {"ode_eps": 1.0e-6, "ode_nmax": 30},
+    "newton_setting": {"newton_eps": "1.0e-100", "newton_nmax": 30},
+    "reactions": [
+        "2*# + CO <-> CO##",
+        "2*# + O2 <-> 2*O#",
+        "CO## + O# <-> CO2 + 3*#"
+    ],
+    "barriers": [
+        [0, -0.22312],
+        [0.82186, -1.28814],
+        [0.72, -1.575498]
+    ],
+    "gas_info": [
+        {"name": "CO", "pressure": [1.0]},
+        {"name": "O2", "pressure": [0.5]},
+        {"name": "CO2", "pressure": [0.0]}
+    ],
+    "cstr": {
+        "feed": {"CO": 1.0, "O2": 0.5, "CO2": 0.0},
+        "residence_time": 1.0,
+        "gas_factor": 1.0e-3,
+        "max_time": 100.0
+    }
+}
